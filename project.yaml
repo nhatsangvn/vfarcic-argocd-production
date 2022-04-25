@@ -13,9 +13,28 @@ spec:
   - namespace: '*'
     server: https://kubernetes.default.svc
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
+  - group: ''
+    kind: Namespace
+  #- group: 'rbac.authorization.k8s.io'
+  #  kind: '*'
+  #- group: 'apiextensions.k8s.io'
+  #  kind: 'CustomResourceDefinition'
+  #- group: 'argoproj.io'
+  #- group: '*'
+  #  kind: '*'
+  namespaceResourceBlacklist:
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: LimitRange
+  - group: ''
+    kind: NetworkPolicy
   namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
-
+  - group: 'apps'
+    kind: Deployment
+  - group: 'apps'
+    kind: StatefulSet
+  - group: 'extensions/v1beta1' 
+    kind: Ingress
+  - group: 'v1' 
+    kind: Service

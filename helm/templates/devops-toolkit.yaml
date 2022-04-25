@@ -16,7 +16,7 @@ spec:
         image:
           tag: latest
         ingress:
-          host: devopstoolkitseries.com
+          host: devops.21.sohan.cloud
       version: v3
   destination:
     namespace: production
