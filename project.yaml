@@ -21,8 +21,6 @@ spec:
   #  kind: 'CustomResourceDefinition'
   - group: 'argoproj.io'
     kind: AppProject
-  - group: 'extensions'
-    kind: Ingress
   #- group: '*'
   #  kind: '*'
   namespaceResourceBlacklist:
@@ -37,9 +35,9 @@ spec:
     kind: Deployment
   - group: 'apps'
     kind: StatefulSet
-  - group: 'extensions/v1beta1' 
-    kind: Ingress
-  - group: 'v1' 
+  - group: '' 
     kind: Service
   - group: 'argoproj.io'
     kind: Application
+  - group: 'extensions/v1beta1,extensions,networking.k8s.io'
+    kind: Ingress
